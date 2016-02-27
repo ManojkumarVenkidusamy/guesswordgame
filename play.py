@@ -1,6 +1,7 @@
 import game.main as game
 import time
 import sys
+import getpass
 
 def main():
     play = "--++playtheguesswordgame++--"
@@ -96,12 +97,10 @@ def main():
             match the word that computer have in its mind (yes! the mind) as the number
             of stars and the number of characters that exist in the word but not in the appropriate 
             position with the number of exclamation symbol.
-
             """
-
-        guess_word = game.GuessWord()
-        guess_word.start_game()
-
+	game_word = getpass.getpass("You are User1..\nEnter the word for User2 to guess : ")
+        guess_word = game.GuessWord(game_word)
+	guess_word.start_game()
     else:
         print "Good bye!"
 
